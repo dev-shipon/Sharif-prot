@@ -9,6 +9,40 @@ import ResearchDashboard from "@/components/ResearchDashboard";
 
 export default function Home() {
   const [isPatentOpen, setIsPatentOpen] = useState(false);
+  const [currentText, setCurrentText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const keywords = [
+    "Management Information Systems",
+    "AI & Data Analytics Research",
+    "Predictive Error Detection",
+    "Decision Support Systems",
+    "Data-Driven Business Solutions"
+  ];
+
+  useEffect(() => {
+    let timer;
+    const currentWord = keywords[textIndex];
+    const typingSpeed = isDeleting ? 30 : 60;
+    
+    if (!isDeleting && currentText === currentWord) {
+      timer = setTimeout(() => setIsDeleting(true), 2000);
+    } else if (isDeleting && currentText === "") {
+      setIsDeleting(false);
+      setTextIndex((prev) => (prev + 1) % keywords.length);
+    } else {
+      timer = setTimeout(() => {
+        setCurrentText(
+          isDeleting
+            ? currentWord.substring(0, currentText.length - 1)
+            : currentWord.substring(0, currentText.length + 1)
+        );
+      }, typingSpeed);
+    }
+    
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, textIndex]);
 
   useEffect(() => {
     const observerOptions = {
@@ -54,12 +88,12 @@ export default function Home() {
               <h1 className="font-display-lg text-4xl md:text-5xl lg:text-display-lg text-primary tracking-tight font-extrabold leading-none">
                 Md Sharfuddin
               </h1>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2 min-h-[96px] sm:min-h-[72px]">
                 <h2 className="font-headline-lg text-xl md:text-2xl lg:text-[25px] text-deep-navy leading-snug font-bold">
-                  MBA in MIS | AI &amp; Data Analytics Researcher | Business Analyst
+                  Specializing in <span className="text-secondary border-r-2 border-secondary pr-1 animate-pulse">{currentText}</span>
                 </h2>
-                <h3 className="font-headline-md text-base md:text-lg text-secondary font-semibold">
-                  Published Researcher | Patent Holder | Guest Lecturer
+                <h3 className="font-headline-md text-base md:text-lg text-on-surface-variant/80 font-medium">
+                  MBA in MIS • Published Researcher • Patent Holder • Guest Lecturer
                 </h3>
               </div>
               <p className="font-body-lg text-sm md:text-base text-on-surface-variant max-w-2xl leading-relaxed">
@@ -208,44 +242,61 @@ export default function Home() {
 
         {/* Experience & Education Summary Section */}
         <section className="py-16 md:py-24 border-t border-surface-container-highest bg-surface-container-lowest transition-colors duration-300">
-          <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div className="reveal-section">
-              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
-                <span className="material-symbols-outlined text-secondary">work</span> Experience
-              </h3>
-              <div className="space-y-10">
-                <div className="relative pl-8 border-l border-outline-variant">
-                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
-                  <p className="font-label-sm text-xs text-secondary mb-1">08/2025 &ndash; Present</p>
-                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">Business Analyst</h4>
-                  <p className="font-body-md text-sm text-on-surface-variant">UpSkill Consultancy, NY</p>
-                </div>
-              </div>
-              <div className="mt-8 pt-4 border-t border-outline-variant/60">
-                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
-                  View full journey details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
-              </div>
+          <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop">
+            <div className="mb-12 reveal-section">
+              <span className="font-label-sm text-xs uppercase tracking-widest text-secondary font-bold mb-2 block">Background Summary</span>
+              <h2 className="font-display-lg text-2xl md:text-3xl font-extrabold text-primary">Foundations &amp; Credentials</h2>
             </div>
-
-            <div className="reveal-section">
-              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
-                <span className="material-symbols-outlined text-secondary">history_edu</span> Education
-              </h3>
-              <div className="space-y-10">
-                <div className="relative pl-8 border-l border-outline-variant">
-                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
-                  <p className="font-label-sm text-xs text-secondary mb-1">2023 &ndash; 2025</p>
-                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">MBA in MIS</h4>
-                  <p className="font-body-md text-sm text-on-surface-variant">
-                    International American University, Los Angeles
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              {/* Experience Card */}
+              <div className="bg-primary text-on-primary rounded-3xl p-8 md:p-10 shadow-xl flex flex-col justify-between reveal-section group relative overflow-hidden">
+                <div className="absolute right-0 top-0 opacity-5 pointer-events-none transform -translate-y-10 translate-x-10 scale-150">
+                  <span className="material-symbols-outlined text-[200px]">work</span>
+                </div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 bg-white/10 text-secondary-fixed-dim px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-8">
+                    <span className="material-symbols-outlined text-[16px]">business_center</span>
+                    Professional Focus
+                  </div>
+                  <p className="text-on-primary/60 text-xs font-semibold mb-2">08/2025 &ndash; Present</p>
+                  <h3 className="font-display-lg text-2xl md:text-3xl font-extrabold mb-3 group-hover:text-secondary-fixed transition-colors">Business Analyst</h3>
+                  <p className="font-body-lg text-base md:text-lg font-bold text-on-primary/80 mb-6">UpSkill Consultancy, New York, USA</p>
+                  <p className="font-body-md text-sm text-on-primary/70 leading-relaxed mb-6">
+                    Spearheading AI-driven MIS implementations, optimizing organizational workflows, and designing predictive analytic dashboards to guide executive decision frameworks.
                   </p>
                 </div>
+                <div className="relative z-10 pt-6 border-t border-on-primary/10">
+                  <Link href="/experience" className="inline-flex items-center gap-1.5 text-sm text-secondary-fixed-dim font-bold hover:underline group-hover:gap-2.5 transition-all">
+                    Explore Career Roadmap
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+                </div>
               </div>
-              <div className="mt-8 pt-4 border-t border-outline-variant/60">
-                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
-                  View educational history <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
+
+              {/* Education Card */}
+              <div className="bg-white dark:bg-surface-container-lowest border border-outline-variant rounded-3xl p-8 md:p-10 shadow-lg flex flex-col justify-between reveal-section group relative overflow-hidden">
+                <div className="absolute right-0 top-0 opacity-[0.03] pointer-events-none transform -translate-y-10 translate-x-10 scale-150">
+                  <span className="material-symbols-outlined text-[200px] text-secondary">school</span>
+                </div>
+                <div className="relative z-10">
+                  <div className="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-8">
+                    <span className="material-symbols-outlined text-[16px]">school</span>
+                    Academic Credentials
+                  </div>
+                  <p className="text-secondary text-xs font-semibold mb-2">2023 &ndash; 2025</p>
+                  <h3 className="font-display-lg text-2xl md:text-3xl font-extrabold text-primary mb-3 group-hover:text-secondary transition-colors">MBA in MIS</h3>
+                  <p className="font-body-lg text-base md:text-lg font-bold text-deep-navy mb-6">International American University, Los Angeles, USA</p>
+                  <p className="font-body-md text-sm text-on-surface-variant leading-relaxed mb-6">
+                    Specializing in Management Information Systems, data validation paradigms, and predictive forecasting pipelines. Researching intersections of artificial intelligence and strategic data structures.
+                  </p>
+                </div>
+                <div className="relative z-10 pt-6 border-t border-outline-variant/60">
+                  <Link href="/experience" className="inline-flex items-center gap-1.5 text-sm text-secondary font-bold hover:underline group-hover:gap-2.5 transition-all">
+                    View Academic Credentials
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

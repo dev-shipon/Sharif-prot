@@ -81,6 +81,11 @@ export default function Experience() {
       school: "International American University (IAU)",
       location: "Los Angeles, CA",
       active: true,
+      highlights: [
+        "Specialized in Management Information Systems & Business Analytics",
+        "Focused on AI-driven validation frameworks and decision support systems",
+        "Completed coursework in Enterprise Architecture, Big Data Analytics, and Strategic MIS"
+      ]
     },
     {
       date: "2016 – 2021",
@@ -88,6 +93,11 @@ export default function Experience() {
       school: "National University of Bangladesh",
       location: "Dhaka, Bangladesh",
       active: false,
+      highlights: [
+        "Focused on Corporate Finance, Investment Portfolio Management, and Financial Analysis",
+        "Conducted thesis modeling on stock portfolio optimizations using quantitative metrics",
+        "Completed coursework in Business Statistics, Managerial Accounting, and Financial Risk Management"
+      ]
     },
   ];
 
@@ -160,22 +170,44 @@ export default function Experience() {
                 <span className="material-symbols-outlined text-secondary text-2xl font-semibold">school</span>
                 <h2 className="font-headline-lg text-xl md:text-headline-lg text-primary font-bold">Academic Education</h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="space-y-6">
                 {education.map((edu, idx) => (
                   <div
                     key={idx}
-                    className="p-6 md:p-8 bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm hover:border-secondary transition-colors"
+                    className="p-6 md:p-8 bg-surface-container-lowest border border-outline-variant rounded-2xl shadow-sm hover:border-secondary hover:shadow-md transition-all duration-300 relative overflow-hidden group"
                   >
-                    <span
-                      className={`font-label-sm text-xs mb-4 block font-semibold ${
-                        edu.active ? "text-secondary" : "text-on-surface-variant"
-                      }`}
-                    >
-                      {edu.date}
-                    </span>
-                    <h3 className="font-headline-md text-lg font-bold text-deep-navy mb-2">{edu.degree}</h3>
-                    <p className="font-body-md text-sm md:text-base text-on-surface-variant">{edu.school}</p>
-                    <p className="font-body-md text-sm text-on-surface-variant italic mt-1">{edu.location}</p>
+                    <div className="absolute right-0 top-0 opacity-[0.03] pointer-events-none transform translate-y-2 translate-x-2 scale-110">
+                      <span className="material-symbols-outlined text-8xl text-secondary">school</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                      <span
+                        className={`font-label-sm text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider w-fit ${
+                          edu.active ? "text-secondary bg-secondary-fixed" : "text-on-surface-variant bg-surface-variant"
+                        }`}
+                      >
+                        {edu.date}
+                      </span>
+                      <p className="font-body-md text-xs text-outline font-semibold flex items-center gap-1">
+                        <span className="material-symbols-outlined text-sm">location_on</span>
+                        {edu.location}
+                      </p>
+                    </div>
+                    <h3 className="font-headline-md text-lg md:text-xl font-bold text-deep-navy mb-1 group-hover:text-secondary transition-colors">
+                      {edu.degree}
+                    </h3>
+                    <p className="font-body-md text-sm md:text-base font-bold text-primary mb-4">{edu.school}</p>
+                    
+                    <div className="border-t border-outline-variant/60 pt-4 mt-2">
+                      <h4 className="text-[10px] font-bold text-outline uppercase tracking-wider mb-2.5">Academic Focus &amp; Coursework</h4>
+                      <ul className="space-y-2">
+                        {edu.highlights.map((hl, i) => (
+                          <li key={i} className="text-xs text-on-surface-variant flex items-start gap-2 leading-relaxed">
+                            <span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0 mt-1.5"></span>
+                            <span>{hl}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 ))}
               </div>
