@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PatentModal from "@/components/PatentModal";
@@ -136,10 +137,13 @@ export default function Home() {
 
             <div className="md:col-span-5 relative w-full flex justify-center reveal-section">
               <div className="relative w-full max-w-[400px] aspect-square rounded-2xl overflow-hidden border border-surface-container-highest shadow-2xl bg-white dark:bg-surface-container-lowest p-2">
-                <img
+                <Image
                   alt="Md Sharfuddin Portrait"
                   className="w-full h-full object-cover rounded-xl"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuB17c65LV9BylHjLw6_KDtvqzFpN9jhDpBdXjh3b89vKLEXX1WlfOpTQatX2COkEN5wQBFoLVbtqZJLo32VsY6dnCGs0RgDdvCvh6X9_N-C5w72Nwe22QGNA7UUBf06pHiG1l2YuetphH8ixAMGy6ogd32ItGG58RtJph3y08rKaSgij3MHNWB0CbhY7yMa9bmgGhhDcJyJDUjqRVNWc4PTWiNUsiSL9X_jkMtBBpAP4z3E5iD2nXe7VIwTUxJQcWVk_i8XMArSMC8"
+                  width={362}
+                  height={362}
+                  priority
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white dark:bg-surface-container-lowest p-4 rounded-2xl border border-outline-variant shadow-xl flex flex-col gap-2.5 max-w-[250px] z-20 hover:scale-[1.03] transition-transform duration-300 hidden sm:flex">
