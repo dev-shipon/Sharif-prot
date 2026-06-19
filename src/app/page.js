@@ -206,6 +206,51 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Experience & Education Summary Section */}
+        <section className="py-16 md:py-24 border-t border-surface-container-highest bg-surface-container-lowest transition-colors duration-300">
+          <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+            <div className="reveal-section">
+              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
+                <span className="material-symbols-outlined text-secondary">work</span> Experience
+              </h3>
+              <div className="space-y-10">
+                <div className="relative pl-8 border-l border-outline-variant">
+                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
+                  <p className="font-label-sm text-xs text-secondary mb-1">08/2025 &ndash; Present</p>
+                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">Business Analyst</h4>
+                  <p className="font-body-md text-sm text-on-surface-variant">UpSkill Consultancy, NY</p>
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-outline-variant/60">
+                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
+                  View full journey details <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="reveal-section">
+              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
+                <span className="material-symbols-outlined text-secondary">history_edu</span> Education
+              </h3>
+              <div className="space-y-10">
+                <div className="relative pl-8 border-l border-outline-variant">
+                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
+                  <p className="font-label-sm text-xs text-secondary mb-1">2023 &ndash; 2025</p>
+                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">MBA in MIS</h4>
+                  <p className="font-body-md text-sm text-on-surface-variant">
+                    International American University, Los Angeles
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-outline-variant/60">
+                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
+                  View educational history <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Academic Impact & Citation Metrics Section */}
         <section className="py-16 md:py-24 border-t border-surface-container-highest transition-colors duration-300">
           <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop">
@@ -590,51 +635,6 @@ export default function Home() {
                     </svg>
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Experience & Education Summary Section */}
-        <section className="py-16 md:py-24 border-t border-surface-container-highest bg-surface-container-lowest transition-colors duration-300">
-          <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-            <div className="reveal-section">
-              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
-                <span className="material-symbols-outlined text-secondary">work</span> Experience
-              </h3>
-              <div className="space-y-10">
-                <div className="relative pl-8 border-l border-outline-variant">
-                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
-                  <p className="font-label-sm text-xs text-secondary mb-1">08/2025 &ndash; Present</p>
-                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">Business Analyst</h4>
-                  <p className="font-body-md text-sm text-on-surface-variant">UpSkill Consultancy, NY</p>
-                </div>
-              </div>
-              <div className="mt-8 pt-4 border-t border-outline-variant/60">
-                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
-                  View full journey details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="reveal-section">
-              <h3 className="font-headline-md text-xl font-bold text-primary mb-10 flex items-center gap-3">
-                <span className="material-symbols-outlined text-secondary">history_edu</span> Education
-              </h3>
-              <div className="space-y-10">
-                <div className="relative pl-8 border-l border-outline-variant">
-                  <div className="absolute -left-[5px] top-0 w-[9px] h-[9px] rounded-full bg-secondary"></div>
-                  <p className="font-label-sm text-xs text-secondary mb-1">2023 &ndash; 2025</p>
-                  <h4 className="font-headline-md text-base md:text-[18px] font-bold text-deep-navy">MBA in MIS</h4>
-                  <p className="font-body-md text-sm text-on-surface-variant">
-                    International American University, Los Angeles
-                  </p>
-                </div>
-              </div>
-              <div className="mt-8 pt-4 border-t border-outline-variant/60">
-                <Link href="/experience" className="text-secondary hover:text-primary font-semibold text-sm flex items-center gap-1">
-                  View educational history <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
               </div>
             </div>
           </div>
