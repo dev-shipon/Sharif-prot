@@ -1,5 +1,6 @@
 import { Inter, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import SideNav from "@/components/SideNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +37,12 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
-        {children}
+        <div className="flex min-h-screen">
+          <SideNav />
+          <div className="flex-1 min-w-0 flex flex-col relative">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
