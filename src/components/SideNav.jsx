@@ -22,22 +22,22 @@ export default function SideNav() {
   };
 
   return (
-    <aside className="hidden lg:flex flex-col w-[260px] h-screen sticky top-0 bg-[#021124] text-white py-12 px-8 shrink-0 overflow-y-auto border-r border-white/5 z-40">
-      <div className="mb-10">
+    <aside className="hidden lg:flex flex-col w-[260px] fixed right-8 top-[20%] bg-[#021124] text-white py-8 px-6 rounded-2xl shadow-2xl border border-white/10 z-50">
+      <div className="mb-6">
         <h2 className="flex items-center gap-3 text-sm font-bold tracking-widest text-[#7EB6FF] uppercase">
           <span className="w-0.5 h-4 bg-[#4A90E2] rounded-full"></span>
           Navigation
         </h2>
       </div>
 
-      <nav className="flex flex-col gap-5">
+      <nav className="flex flex-col gap-4">
         {navItems.map((item) => {
           const active = isActive(item.href);
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`text-base font-medium transition-all duration-300 relative pl-4 ${
+              className={`text-sm font-medium transition-all duration-300 relative pl-4 ${
                 active ? "text-white" : "text-[#8BA4C4] hover:text-white hover:translate-x-1"
               }`}
             >
@@ -49,13 +49,6 @@ export default function SideNav() {
           );
         })}
       </nav>
-
-      <div className="mt-auto pt-10">
-        {/* Optional branding or footer for the sidebar */}
-        <p className="text-[10px] text-[#5A7494] uppercase tracking-widest font-bold opacity-60">
-          Md Sharfuddin &copy; {new Date().getFullYear()}
-        </p>
-      </div>
     </aside>
   );
 }

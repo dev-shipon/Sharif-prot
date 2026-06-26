@@ -36,13 +36,9 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container">
-        <div className="flex min-h-screen">
-          <SideNav />
-          <div className="flex-1 min-w-0 flex flex-col relative">
-            {children}
-          </div>
-        </div>
+      <body className="bg-background text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container relative">
+        {children}
+        <SideNav />
       </body>
     </html>
   );

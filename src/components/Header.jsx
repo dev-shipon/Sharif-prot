@@ -46,7 +46,7 @@ export default function Header() {
   };
 
   return (
-    <header className="lg:hidden bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-container-highest shadow-sm transition-colors duration-300">
+    <header className="bg-surface-container-lowest sticky top-0 z-50 border-b border-surface-container-highest shadow-sm transition-colors duration-300">
       <nav className="flex justify-between items-center h-16 px-4 md:px-margin-desktop max-w-max-width mx-auto">
         {/* Logo */}
         <Link href="/" className="font-headline-md text-headline-md font-bold text-deep-navy hover:text-secondary transition-colors duration-200">
