@@ -22,7 +22,7 @@ export default function SideNav() {
   };
 
   return (
-    <aside className="hidden lg:flex flex-col w-[260px] fixed right-8 top-[20%] bg-[#021124] text-white py-8 px-6 rounded-2xl shadow-2xl border border-white/10 z-50">
+    <aside className="hidden lg:flex flex-col w-[260px] fixed left-8 top-[20%] bg-[#021124] text-white py-8 px-6 rounded-2xl shadow-2xl border border-white/10 z-50">
       <div className="mb-6">
         <h2 className="flex items-center gap-3 text-sm font-bold tracking-widest text-[#7EB6FF] uppercase">
           <span className="w-0.5 h-4 bg-[#4A90E2] rounded-full"></span>
