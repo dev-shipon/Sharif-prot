@@ -14,15 +14,31 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
       setSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1500);
+    }
   };
 
   const handleChange = (e) => {
