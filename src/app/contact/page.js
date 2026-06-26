@@ -104,10 +104,10 @@ export default function Contact() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { name: "Google Scholar", icon: "school", href: "https://scholar.google.com/citations?user=SHARFUDDIN" },
-                  { name: "ResearchGate", icon: "hub", href: "https://www.researchgate.net/profile/Md-Sharfuddin-4" },
-                  { name: "ORCID Profile", icon: "account_circle", href: "https://orcid.org/0009-0005-2313-1768" },
-                  { name: "LinkedIn Profile", icon: "link", href: "https://www.linkedin.com/in/md-sharfuddin-2708b730b" },
+                  { name: "Google Scholar", icon: "school", href: "https://scholar.google.com/citations?hl=en&authuser=3&user=SMQ9e18AAAAJ" },
+                  { name: "ResearchGate", icon: "hub", href: "https://www.researchgate.net/profile/Md-Sharfuddin?ev=hdr_xprf" },
+                  { name: "ORCID Profile", icon: "account_circle", href: "https://orcid.org/my-orcid?orcid=0009-0006-5783-9992" },
+                  { name: "LinkedIn Profile", icon: "link", href: "https://www.linkedin.com/in/md-sharfuddin96/" },
                 ].map((item, idx) => (
                   <a
                     key={idx}

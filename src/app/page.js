@@ -158,7 +158,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                    1 Patent (UK Approved)
+                    2 Patents (UK Approved)
                   </li>
                   <li className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
@@ -310,94 +310,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Academic Impact & Citation Metrics Section */}
-        <section className="py-16 md:py-24 border-t border-surface-container-highest transition-colors duration-300">
-          <div className="max-w-max-width mx-auto px-4 md:px-margin-desktop">
-            <div className="mb-12 reveal-section">
-              <h2 className="font-headline-lg text-2xl md:text-headline-lg text-primary font-bold">
-                Academic Impact &amp; Citation Metrics
-              </h2>
-              <p className="text-on-surface-variant font-body-md mt-2">
-                Tracking academic research footprints and Google Scholar citation indices.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-section">
-              {/* Scholar Stats */}
-              <div className="lg:col-span-4 bg-surface-container-low border border-outline-variant p-6 rounded-2xl grid grid-cols-3 lg:grid-cols-1 gap-6 shadow-sm">
-                <div className="flex flex-col justify-center items-center p-4 bg-white dark:bg-surface-container-lowest rounded-xl border border-outline-variant/60">
-                  <span className="text-3xl font-extrabold text-primary">42</span>
-                  <span className="text-[10px] md:text-xs text-on-surface-variant font-bold uppercase tracking-wider mt-1 text-center">Citations</span>
-                </div>
-                <div className="flex flex-col justify-center items-center p-4 bg-white dark:bg-surface-container-lowest rounded-xl border border-outline-variant/60">
-                  <span className="text-3xl font-extrabold text-primary">3</span>
-                  <span className="text-[10px] md:text-xs text-on-surface-variant font-bold uppercase tracking-wider mt-1 text-center">h-index</span>
-                </div>
-                <div className="flex flex-col justify-center items-center p-4 bg-white dark:bg-surface-container-lowest rounded-xl border border-outline-variant/60">
-                  <span className="text-3xl font-extrabold text-primary">1</span>
-                  <span className="text-[10px] md:text-xs text-on-surface-variant font-bold uppercase tracking-wider mt-1 text-center">i10-index</span>
-                </div>
-              </div>
-
-              {/* Annual Citation Chart (SVG) */}
-              <div className="lg:col-span-8 bg-white dark:bg-surface-container-lowest border border-outline-variant p-6 md:p-8 rounded-2xl shadow-sm flex flex-col justify-between">
-                <div>
-                  <h3 className="font-headline-md text-base md:text-lg font-bold text-deep-navy mb-6 flex items-center gap-2">
-                    <span className="material-symbols-outlined text-secondary">bar_chart</span>
-                    Annual Citations Growth
-                  </h3>
-                  <div className="w-full aspect-[2.5/1] relative">
-                    <svg className="w-full h-full" viewBox="0 0 500 200" preserveAspectRatio="none">
-                      {/* Grid Lines */}
-                      <line x1="50" y1="20" x2="480" y2="20" stroke="currentColor" className="text-outline-variant opacity-30" strokeDasharray="3" strokeWidth="0.5" />
-                      <line x1="50" y1="70" x2="480" y2="70" stroke="currentColor" className="text-outline-variant opacity-30" strokeDasharray="3" strokeWidth="0.5" />
-                      <line x1="50" y1="120" x2="480" y2="120" stroke="currentColor" className="text-outline-variant opacity-30" strokeDasharray="3" strokeWidth="0.5" />
-                      <line x1="50" y1="170" x2="480" y2="170" stroke="currentColor" className="text-outline-variant opacity-40" strokeWidth="0.5" />
-
-                      {/* Y-Axis labels */}
-                      <text x="35" y="24" className="fill-on-surface-variant text-[10px] text-right font-medium">30</text>
-                      <text x="35" y="74" className="fill-on-surface-variant text-[10px] text-right font-medium">20</text>
-                      <text x="35" y="124" className="fill-on-surface-variant text-[10px] text-right font-medium">10</text>
-                      <text x="35" y="174" className="fill-on-surface-variant text-[10px] text-right font-medium">0</text>
-
-                      {/* Bar 2023: 2 citations */}
-                      <rect x="90" y="160" width="40" height="10" rx="3" className="fill-outline-variant hover:fill-secondary duration-300 transition-colors cursor-pointer" />
-                      <text x="110" y="152" textAnchor="middle" className="fill-secondary text-[10px] font-bold">2</text>
-                      <text x="110" y="188" textAnchor="middle" className="fill-on-surface-variant text-[10px] font-semibold">2023</text>
-
-                      {/* Bar 2024: 10 citations */}
-                      <rect x="190" y="120" width="40" height="50" rx="3" className="fill-outline-variant hover:fill-secondary duration-300 transition-colors cursor-pointer" />
-                      <text x="210" y="112" textAnchor="middle" className="fill-secondary text-[10px] font-bold">10</text>
-                      <text x="210" y="188" textAnchor="middle" className="fill-on-surface-variant text-[10px] font-semibold">2024</text>
-
-                      {/* Bar 2025: 22 citations */}
-                      <rect x="290" y="60" width="40" height="110" rx="3" className="fill-secondary hover:fill-primary duration-300 transition-colors cursor-pointer" />
-                      <text x="310" y="52" textAnchor="middle" className="fill-secondary text-[10px] font-bold">22</text>
-                      <text x="310" y="188" textAnchor="middle" className="fill-on-surface-variant text-[10px] font-semibold">2025</text>
-
-                      {/* Bar 2026: 8 citations */}
-                      <rect x="390" y="130" width="40" height="40" rx="3" className="fill-outline-variant hover:fill-secondary duration-300 transition-colors cursor-pointer" />
-                      <text x="410" y="122" textAnchor="middle" className="fill-secondary text-[10px] font-bold">8</text>
-                      <text x="410" y="188" textAnchor="middle" className="fill-on-surface-variant text-[10px] font-semibold">2026*</text>
-                    </svg>
-                  </div>
-                </div>
-                <div className="mt-4 flex justify-between items-center text-[10px] md:text-xs text-outline italic">
-                  <span>* 2026 citations include early indexing.</span>
-                  <a
-                    href="https://scholar.google.com/citations?user=SHARFUDDIN"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary font-bold hover:underline flex items-center gap-1"
-                  >
-                    Google Scholar profile
-                    <span className="material-symbols-outlined text-[12px]">open_in_new</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Featured Research & Patents Section */}
         <section className="py-16 md:py-24 bg-surface-container-low transition-colors duration-300">
@@ -416,20 +328,19 @@ export default function Home() {
               <div className="lg:col-span-7 bg-white dark:bg-surface-container-lowest border border-outline-variant p-6 md:p-8 rounded-2xl flex flex-col justify-between hover:shadow-lg transition-all duration-300 group reveal-section">
                 <div>
                   <div className="flex justify-between items-start mb-6 gap-2">
-                    <span className="font-label-sm text-xs text-secondary bg-secondary-fixed dark:bg-secondary/20 px-3 py-1 rounded-full uppercase tracking-wider font-semibold">
-                      UK Approved Patent 2025
-                    </span>
+                      UK Approved Patents
                     <span className="material-symbols-outlined text-4xl text-secondary opacity-40 group-hover:opacity-100 transition-opacity">
                       shield_lock
                     </span>
                   </div>
                   <h3 className="font-headline-lg text-xl md:text-2xl font-bold text-primary mb-4">
-                    Cyberattack Detection and Prevention Device
+                    Patented Innovations
                   </h3>
                   <p className="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-4">
-                    An advanced threat-detection device operating at the network hardware level. Designed to sync with corporate ERP systems to monitor system logs and instantly mitigate unauthorized lateral movements.
+                    <strong>1. Cyberattack Detection Device:</strong> An advanced threat-detection device operating at the network hardware level to monitor system logs and mitigate lateral movements.<br/>
+                    <strong>2. Desktop Display Stand:</strong> An ergonomic display stand designed for electronic tablets and screens.
                   </p>
-                  <p className="text-xs text-outline font-semibold">Design Registration No: UK-6392015</p>
+                  <p className="text-xs text-outline font-semibold">Design Registration Nos: 6471605, 6509489</p>
                 </div>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <button
@@ -528,12 +439,12 @@ export default function Home() {
               <div className="p-6 bg-white dark:bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md hover:border-secondary hover:-translate-y-1 transition-all duration-300">
                 <div>
                   <span className="text-4xl mb-4 block">📜</span>
-                  <h3 className="font-headline-md text-base md:text-lg font-bold text-primary mb-2">UK Patent Approved</h3>
+                  <h3 className="font-headline-md text-base md:text-lg font-bold text-primary mb-2">UK Patents Approved</h3>
                   <p className="text-xs text-on-surface-variant leading-relaxed">
-                    Design registration and patent approved in 2025 for lateral network threat detection devices.
+                    Design registrations approved in 2025-2026 for cyberattack detection devices and electronic tablet stands.
                   </p>
                 </div>
-                <span className="text-[10px] text-outline font-semibold mt-4 block">ID: UK-6392015 | 2025</span>
+                <span className="text-[10px] text-outline font-semibold mt-4 block">IDs: 6471605, 6509489 | 2025-2026</span>
               </div>
 
               {/* Achievement 3 */}
@@ -552,9 +463,9 @@ export default function Home() {
               <div className="p-6 bg-white dark:bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md hover:border-secondary hover:-translate-y-1 transition-all duration-300">
                 <div>
                   <span className="text-4xl mb-4 block">📚</span>
-                  <h3 className="font-headline-md text-base md:text-lg font-bold text-primary mb-2">15+ Research Papers</h3>
+                  <h3 className="font-headline-md text-base md:text-lg font-bold text-primary mb-2">16 Research Papers</h3>
                   <p className="text-xs text-on-surface-variant leading-relaxed">
-                    Over 15 research publications spanning international journals, Springer series, and global academic indexing platforms.
+                    16 research publications spanning international journals, Springer series, and global academic indexing platforms.
                   </p>
                 </div>
                 <span className="text-[10px] text-outline font-semibold mt-4 block">Published &amp; Indexed</span>
@@ -644,7 +555,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4">
                   {/* Google Scholar Link */}
                   <a
-                    href="https://scholar.google.com/citations?user=SHARFUDDIN"
+                    href="https://scholar.google.com/citations?hl=en&authuser=3&user=SMQ9e18AAAAJ"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center hover:bg-secondary-container hover:scale-105 transition-all group"
@@ -657,7 +568,7 @@ export default function Home() {
 
                   {/* ResearchGate Link */}
                   <a
-                    href="https://www.researchgate.net/profile/Md-Sharfuddin-4"
+                    href="https://www.researchgate.net/profile/Md-Sharfuddin?ev=hdr_xprf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center hover:bg-secondary-container hover:scale-105 transition-all group"
@@ -670,7 +581,7 @@ export default function Home() {
 
                   {/* ORCID Link */}
                   <a
-                    href="https://orcid.org/0009-0005-2313-1768"
+                    href="https://orcid.org/my-orcid?orcid=0009-0006-5783-9992"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center hover:bg-secondary-container hover:scale-105 transition-all group"
@@ -683,7 +594,7 @@ export default function Home() {
 
                   {/* LinkedIn Link */}
                   <a
-                    href="https://www.linkedin.com/in/md-sharfuddin-2708b730b"
+                    href="https://www.linkedin.com/in/md-sharfuddin96/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center hover:bg-secondary-container hover:scale-105 transition-all group"
